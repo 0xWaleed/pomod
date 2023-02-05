@@ -1,0 +1,15 @@
+[backlog]
+- [] add cli as entrypoint
+- [] add webservice entrypoint
+
+[todo]
+
+[doing]
+
+[done]
+- [√] create task
+- [√] ability to pass task options
+- [√] modify the inner ticker
+- [√] move to next session
+- [√] move to next session automatically
+- [√] reset task

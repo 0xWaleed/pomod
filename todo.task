@@ -3,6 +3,10 @@
 - [] add webservice entrypoint
 
 [todo]
+- [][pomod-manager] add an endpoint to return active task
+- [][pomod-manager] add an endpoint to activate a task
+- [][pomod-manager] add an endpoint to start the task
+- [][pomod-manager] add an endpoint to change settings
 
 [doing]
 

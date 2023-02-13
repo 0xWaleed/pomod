@@ -1,0 +1,76 @@
+Feature: Restful API
+
+Card:
+  As a client
+    I want to subscribe to the current running task
+      So I can show the timer
+
+
+Conversations:
+-[√] Does user able to add task?
+-[] What options they can pass when adding a new task?
+-[√] What will happen if the task name already assigned to a task?
+-[√] What will happen if the task already elapsed?
+-[√] What will happen when user wants to start working on a task?
+-[√] What will happen when user trying to start an already started task?
+-[√] What we need to start task?
+-[√] How clients know what task to start?
+
+
+Confirmations:
+[√]
+Scenario: Add task
+Given a valid task with unique name
+When user request to add the task /tasks
+Then add it to the task lists
+
+[√]
+Scenario: Add task with options
+Given a valid task with unique name
+And task options
+When user request to add the task /tasks
+Then create a task with options provided
+And add it to the list
+
+[√]
+Scenario: Adding task with name that already exist
+Given a valid task instance with name that already exist
+When user request to add the task /tasks
+Then do not add the task
+And returns error
+
+[√]
+Scenario: User wants to start working on a task
+Given valid task id
+When user request to start a task
+Then should start the task
+And broadcast the progress of the task to any subscriber
+
+[√]
+Scenario: User wants to start working on a task that already has a session that is not yet done
+Given valid task id
+When user request to start a task /tasks/:id/start
+Then returns errors
+
+[√]
+Scenario: User wants to start working on a task that has a session that already done
+Given valid task id
+When user request to start a task /tasks/:id/start
+Then go to next session
+And start ticking the task
+And broadcast the progress
+
+[]
+Scenario: starting another task
+Given valid task
+And already running task
+When user request to start a task /tasks/:id/start
+Then abort first one
+And start the new one
+
+
+[√]
+Scenario: Users wants to get all the tasks
+Given task list
+When user request to list all tasks /tasks
+Then return all tasks

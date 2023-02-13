@@ -48,7 +48,11 @@ type Session struct {
 }
 
 func (s *Session) String() string {
-	return fmt.Sprintf("(%s:%s:%s)[%s]", s.Type, s.Elapsed, s.Remaining(), s.Task)
+	status := "Not Finished"
+	if s.Done() {
+		status = "Finished"
+	}
+	return fmt.Sprintf("(%s:%s:%s)[%s:%s]", s.Type, s.Elapsed, s.Remaining(), s.Task, status)
 }
 
 func (s *Session) Length() time.Duration {

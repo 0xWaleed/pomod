@@ -1,11 +1,11 @@
 [backlog]
 - [] add cli as entrypoint
 - [] add webservice entrypoint
+- [] allow timer to go to negative numbers
+- [] allow to stop work
+- [] allow to reset work
 
 [todo]
-- [][pomod-manager] add an endpoint to return active task
-- [][pomod-manager] add an endpoint to activate a task
-- [][pomod-manager] add an endpoint to start the task
 - [][pomod-manager] add an endpoint to change settings
 
 [doing]
@@ -17,3 +17,7 @@
 - [√] move to next session
 - [√] move to next session automatically
 - [√] reset task
+- [√][pomod-manager] add an endpoint to set active task
+- [√][pomod-manager] add an endpoint to return active task
+- [√][pomod-manager] add an endpoint to start the task
+- [√][pomod-manager] should allow only one task to be running

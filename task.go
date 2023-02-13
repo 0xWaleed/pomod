@@ -17,6 +17,7 @@ type TaskOptions struct {
 }
 
 type Task struct {
+	ID             string
 	CurrentSession *Session
 	Options        TaskOptions
 	Title          string
@@ -62,6 +63,7 @@ func (s *Task) RoundCompleted() bool {
 
 func NewTask(title string, settings TaskOptions) Task {
 	t := Task{
+		ID:         generateId(),
 		Options:    settings,
 		Title:      title,
 		PomodoroId: 1,

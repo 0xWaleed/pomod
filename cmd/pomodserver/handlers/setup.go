@@ -52,6 +52,11 @@ func (s *pomodoServer) subscribeHandler() fiber.Handler {
 	return c.handler()
 }
 
+func (s *pomodoServer) updateTaskHandler() fiber.Handler {
+	c := updateTaskHandler{s}
+	return c.handler()
+}
+
 func NewPomodoServer(app *fiber.App) {
 	s := pomodoServer{
 		abortTask: make(chan bool),
@@ -60,6 +65,8 @@ func NewPomodoServer(app *fiber.App) {
 
 	app.Get("/tasks", s.getTasksHandler())
 	app.Get("/task", s.getActiveTaskHandler())
+	app.Put("/tasks/:id", s.updateTaskHandler())
+
 	app.Post("/tasks/:id/activate", s.activateTaskHandler())
 	app.Post("/tasks/:id/start", s.startActiveTask())
 	app.Get("/tasks/subscribe", s.subscribeHandler())

@@ -17,8 +17,9 @@ func (s *getTasksHandler) handler() fiber.Handler {
 		tasks := s.s.tasks
 		for _, task := range tasks {
 			tasksDto = append(tasksDto, dto.GetTaskDto{
-				ID:    task.ID,
-				Title: task.Title,
+				ID:      task.ID,
+				Title:   task.Title,
+				Options: dto.CreateTaskOptionsDto(&task.Options),
 			})
 		}
 

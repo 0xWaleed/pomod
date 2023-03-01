@@ -7,7 +7,6 @@
 - [] allow to reset work
 
 [todo]
-- [][pomod-server] include task options when returning the model.
 - [][pomod-server] should reset the task progress when another task activated?
 
 [doing]
@@ -24,3 +23,4 @@
 - [√][pomod-manager] add an endpoint to start the task
 - [√][pomod-manager] should allow only one task to be running
 - [√][pomod-manager] add an endpoint to change settings
+- [√][pomod-server] include task options when returning the model.

@@ -1,26 +1,34 @@
 
 [backlog]
-- [] add cli as entrypoint
-- [] add webservice entrypoint
-- [] allow timer to go to negative numbers
-- [] allow to stop work
-- [] allow to reset work
+- [][cli] get task
+- [][cli] reset task
+- [][cli] stop task
+- [][server] allow timer to go to negative numbers
+- [][server] allow to stop work
+- [][server] allow to reset work
 
 [todo]
-- [][pomod-server] should reset the task progress when another task activated?
+- [][server] should reset the task progress when another task activated?
+- [][cli] remove task
+- [][cli] list task
+- [][cli] activate task
+- [][cli] start task
+- [][server] returns proper http status
 
 [doing]
+- [][cli] create task
 
 [done]
-- [√] create task
-- [√] ability to pass task options
-- [√] modify the inner ticker
-- [√] move to next session
-- [√] move to next session automatically
-- [√] reset task
-- [√][pomod-manager] add an endpoint to set active task
-- [√][pomod-manager] add an endpoint to return active task
-- [√][pomod-manager] add an endpoint to start the task
-- [√][pomod-manager] should allow only one task to be running
-- [√][pomod-manager] add an endpoint to change settings
-- [√][pomod-server] include task options when returning the model.
+- [√][server] create task
+- [√][server] ability to pass task options
+- [√][server] modify the inner ticker
+- [√][server] move to next session
+- [√][server] move to next session automatically
+- [√][server] reset task
+- [√][server] add an endpoint to set active task
+- [√][server] add an endpoint to return active task
+- [√][server] add an endpoint to start the task
+- [√][server] should allow only one task to be running
+- [√][server] add an endpoint to change settings
+- [√][server] include task options when returning the model.
+- [√][server] returns empty array when there is not tasks

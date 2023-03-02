@@ -12,7 +12,7 @@ type getTasksHandler struct {
 
 func (s *getTasksHandler) handler() fiber.Handler {
 	return func(c *fiber.Ctx) error {
-		var tasksDto []dto.GetTaskDto
+		tasksDto := make([]dto.GetTaskDto, 0)
 
 		tasks := s.s.tasks
 		for _, task := range tasks {

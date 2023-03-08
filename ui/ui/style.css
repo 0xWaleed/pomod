@@ -1,83 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-*, *::before, *::after {
+*, *:before, *:after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html {
-    font-size: 24px;
-    font-family: 'Chakra Petch', sans-serif;
-    --animate-duration: 3000ms;
-    --min-top: 10px;
-    --max-top: 50px;
-    --pomod-width: calc(1920px / 3)
-}
-
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
 body {
-    --clr-primary: #ffffffff;
+    background: transparent;
+    font-family: 'VT323', monospace;
+    --progress-value: 100%;
+
+
+    --clr-circle: #886176;
+    --clr-number: #FAF0CA;
+    --clr-progress: var(--clr-number);
 }
 
-.pomod {
+
+.info {
+    color: white;
+    font-size: 150px;
     position: absolute;
-    right: 50px;
+    right: 10px;
+    bottom: 50vh;
+}
+
+.my-timer {
+    position: absolute;
+    right: 10px;
     top: 10px;
-    text-transform: uppercase;
-    max-width: var(--pomod-width);
-    background-color: #12332130;
-    text-align: center;
-    animation: a var(--animate-duration) ease-in-out alternate-reverse infinite;
-    color: var(--clr-primary);
+    /*padding: 50px;*/
+    /*background-color: red;*/
+
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
 }
 
-.time-wrapper {
+.outer-circle {
+    background: conic-gradient(var(--clr-progress) var(--progress-value), transparent 0deg);
+
+
+    padding: 30px;
+
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.inner-circle {
+    background: var(--clr-circle);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     display: flex;
-    column-gap: 10px;
+
+    align-items: center;
     justify-content: center;
-    animation: color-animation var(--animate-duration) ease-in-out 0s infinite alternate-reverse none;
+
+    color: var(--clr-number);
+    font-size: 100px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 
-.title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    border-bottom: 3px solid var(--clr-primary);
-    animation: color-animation var(--animate-duration) ease-in-out 0s infinite alternate-reverse none;
+#seconds {
+    font-size: 90px;
+    color: var(--clr-circle);
+    text-align: center;
 }
 
-.time {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
 
-.type {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
 
-@keyframes a {
-    from {
-        top: var(--min-top);
-    }
-
-    to {
-        top: var(--max-top);
-    }
-
-}
-
-@keyframes color-animation {
-    0% {
-        opacity: .2;
-    }
-
-    100% {
-        opacity: 1;
-    }
+#debug {
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    top: 50vh;
+    right: 30px;
 }

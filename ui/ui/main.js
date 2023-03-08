@@ -1,5 +1,10 @@
 // 🎉
 
+
+function percentage(partialValue, totalValue) {
+  return (100 * partialValue) / totalValue;
+}
+
 /**
  * @typedef Pomodo
  * @property {string} title
@@ -8,6 +13,44 @@
  * @property {number} minutes
  * @property {number} seconds
  */
+
+
+/**
+ * @param {Pomodo} instance
+ */
+function renderTime(instance) {
+  const width = percentage(seconds, 60);
+  document.body.style.setProperty("--progress-value", `${width}%`);
+  document.getElementById("minutes").innerText = instance.minutes.toString();
+  document.getElementById("seconds").innerText = instance.seconds.toString();
+}
+
+const debugElement = document.getElementById("debug");
+
+
+let seconds = 60;
+let minutes = 25;
+setInterval(function () {
+  debugElement.innerText = `Seconds: ${seconds}, Minutes: ${minutes}`;
+
+  if (seconds === 0 && minutes === 0) {
+    return;
+  }
+
+  if (minutes === 0) {
+
+  }
+
+  if (seconds === 0) {
+    minutes--;
+    seconds = 60;
+  }
+
+
+  seconds--;
+  const mock = { seconds, isDone: false, minutes: minutes, title: "Task title", type: "WORK" };
+  renderTime(mock);
+}, 50);
 
 
 const pomodElement = document.getElementById("pomod");
